@@ -108,7 +108,7 @@ func (a *propertyApp) TransferProperty(ctx contractapi.TransactionContextInterfa
 	prop, err := a.ReadById(ctx, Id)
 	if err != nil {
 		log.Println("error while fetching the property ", err)
-		return nil, err
+		return err
 	}
 	prop.Owner = newOwner
 	bytes, err := json.Marshal(&prop)
